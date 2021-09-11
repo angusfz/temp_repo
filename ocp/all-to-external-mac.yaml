@@ -1,0 +1,18 @@
+apiVersion: "logging.openshift.io/v1"
+kind: ClusterLogForwarder
+metadata:
+  name: instance 
+  namespace: openshift-logging 
+spec:
+  outputs:
+   - name: external-elk
+     type: "elasticsearch"
+     url: http://192.168.2.1:9200
+  pipelines:
+   - name: all-to-external
+     inputRefs:
+      - infrastructure
+      - application
+      - audit
+     outputRefs:
+      - external-elk
