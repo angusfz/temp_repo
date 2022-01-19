@@ -25,5 +25,4 @@ subjects:
 - kind: ServiceAccount
   name: eventrouter
   namespace: openshift-logging
-  apiGroup: rbac.authorization.k8s.io
 ---
