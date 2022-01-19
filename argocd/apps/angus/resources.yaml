@@ -20,9 +20,10 @@ metadata:
 roleRef:
   kind: ClusterRole
   name: event-reader
+  apiGroup: rbac.authorization.k8s.io
 subjects:
 - kind: ServiceAccount
   name: eventrouter
   namespace: openshift-logging
-
+  apiGroup: rbac.authorization.k8s.io
 ---
